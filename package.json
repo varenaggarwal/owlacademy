@@ -5,6 +5,7 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "axios": "^0.21.1",
     "faker": "^5.5.1",
     "miragejs": "^0.1.41",
     "react": "17.0.2",

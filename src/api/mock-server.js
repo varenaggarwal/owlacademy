@@ -8,17 +8,17 @@ export default function setupMockServer() {
     },
 
     models: {
-      products: Model,
+      videos: Model,
     },
 
     routes() {
       this.namespace = "api";
-      this.timing = 3000;
-      this.resource("products");
+      this.timing = 100;
+      this.resource("videos");
     },
 
     seeds(server) {
-      apiVideoData.map((product) => server.create("product", product));
+      apiVideoData.map((video) => server.create("video", video));
     },
   });
 }

@@ -5,7 +5,10 @@ const { createContext, useContext, useReducer } = require("react");
 export const DataContext = createContext();
 
 export function DataProvider({ children }) {
-  const [state, dispatch] = useReducer(reducer, {});
+  const [state, dispatch] = useReducer(reducer, {
+    videoListing: {},
+  });
+
   return (
     <DataContext.Provider value={{ state, dispatch }}>
       {children}
