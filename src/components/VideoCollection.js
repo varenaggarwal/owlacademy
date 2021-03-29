@@ -1,9 +1,15 @@
 import { useData } from "../context/data-context";
+import { PLAY_VIDEO, ROUTE } from "../reducer/reducer";
 import { VideoPlayer } from "./VideoPlayer";
 
 export function VideoCollection() {
-  const { state } = useData();
+  const { state, dispatch } = useData();
   const videoData = state.videoData;
+
+  const playVideo = (video) => {
+    dispatch({ type: ROUTE, payload: "videoTheatre" });
+    dispatch({ type: PLAY_VIDEO, payload: video.id });
+  };
 
   return (
     <div>
@@ -17,7 +23,7 @@ export function VideoCollection() {
             }}
           />
           {video.name}
-          <button onClick={() => console.log("play")}> Play</button>
+          <button onClick={() => playVideo(video)}> Play</button>
         </div>
       ))}
     </div>

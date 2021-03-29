@@ -7,7 +7,8 @@ export const DataContext = createContext();
 export function DataProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, {
     videoData: [],
-    route: "here",
+    route: "videoCollection",
+    currentPlayingVideoId: null,
   });
 
   return (
