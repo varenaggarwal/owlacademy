@@ -3,11 +3,9 @@ import { VideoPlayer } from "./VideoPlayer";
 
 export function VideoTheatre() {
   const { state } = useData();
-  // const currentPlayingVideo = state.currentPlayingVideo;
 
   return (
     <div>
-      <h1>VT</h1>
       <VideoPlayer
         displayProperties={{
           controls: true,

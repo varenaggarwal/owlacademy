@@ -8,4 +8,5 @@ export const apiVideoData = [...Array(20)].map((item) => ({
     "https://s3.amazonaws.com/codecademy-content/courses/React/react_video-slow.mp4",
     "https://s3.amazonaws.com/codecademy-content/courses/React/react_video-fast.mp4",
   ]),
+  duration: faker.datatype.number(),
 }));

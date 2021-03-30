@@ -3,4 +3,6 @@
 .App {
   font-family: sans-serif;
   text-align: center;
+  max-width: 768px;
+  margin: auto;
 }

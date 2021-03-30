@@ -14,7 +14,7 @@ export function VideoCollection() {
   return (
     <div>
       {state.videoData.map((video) => (
-        <div className="card card-shadow">
+        <div key={video.id} className="card">
           <VideoPlayer
             displayProperties={{
               controls: false,
@@ -22,8 +22,13 @@ export function VideoCollection() {
               src: video.src,
             }}
           />
-          {video.name}
-          <button onClick={() => playVideo(video)}> Play</button>
+          <p>{video.name}</p>
+          <button
+            className="btn-primary btn-thin"
+            onClick={() => playVideo(video)}
+          >
+            Play
+          </button>
         </div>
       ))}
     </div>
