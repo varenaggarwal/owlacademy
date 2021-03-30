@@ -24,7 +24,7 @@ export function VideoCollection() {
           />
           <p>{video.name}</p>
           <button
-            className="btn-primary btn-thin"
+            className="btn btn-secondary"
             onClick={() => playVideo(video)}
           >
             Play
