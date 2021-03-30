@@ -8,8 +8,8 @@ export function Navbar() {
       <button
         className={
           state.route === "videoCollection"
-            ? "btn-primary btn-thin visibility-hidden"
-            : "btn-primary btn-thin"
+            ? "visibility-hidden"
+            : "btn btn-primary btn-thin"
         }
         onClick={() => dispatch({ type: ROUTE, payload: "videoCollection" })}
       >
