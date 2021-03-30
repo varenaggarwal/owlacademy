@@ -8,7 +8,7 @@ export function DataProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, {
     videoData: [],
     route: "videoCollection",
-    currentPlayingVideoId: null,
+    currentPlayingVideo: {},
   });
 
   return (

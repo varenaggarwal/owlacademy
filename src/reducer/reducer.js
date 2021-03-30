@@ -11,7 +11,7 @@ export const reducer = (state, action) => {
       return { ...state, route: action.payload };
 
     case PLAY_VIDEO:
-      return { ...state, currentPlayingVideoId: action.payload };
+      return { ...state, currentPlayingVideo: action.payload };
 
     default:
       console.log("in default");

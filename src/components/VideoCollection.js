@@ -8,7 +8,7 @@ export function VideoCollection() {
 
   const playVideo = (video) => {
     dispatch({ type: ROUTE, payload: "videoTheatre" });
-    dispatch({ type: PLAY_VIDEO, payload: video.id });
+    dispatch({ type: PLAY_VIDEO, payload: video });
   };
 
   return (
