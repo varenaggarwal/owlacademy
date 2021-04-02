@@ -15,13 +15,7 @@ export function VideoCollection() {
     <div>
       {state.videoData.map((video) => (
         <div key={video.id} className="card">
-          <VideoPlayer
-            displayProperties={{
-              controls: false,
-              autoPlay: false,
-              src: video.src,
-            }}
-          />
+          <img src={video.thumbnailImg} />
           <p>{video.name}</p>
           <button
             className="btn btn-secondary"

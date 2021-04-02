@@ -10,7 +10,7 @@ export function VideoTheatre() {
         displayProperties={{
           controls: true,
           autoPlay: true,
-          src: state.currentPlayingVideo.src,
+          srcUrl: state.currentPlayingVideo.srcUrl,
         }}
       />
       <h2>{state.currentPlayingVideo.name}</h2>

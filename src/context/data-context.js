@@ -9,6 +9,9 @@ export function DataProvider({ children }) {
     videoData: [],
     route: "videoCollection",
     currentPlayingVideo: {},
+    playlists: {
+      saved: [],
+    },
   });
 
   return (

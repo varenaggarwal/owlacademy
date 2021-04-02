@@ -3,10 +3,11 @@ import faker from "faker";
 export const apiVideoData = [...Array(20)].map((item) => ({
   id: faker.datatype.uuid(),
   name: faker.commerce.productName(),
-  src: faker.random.arrayElement([
-    "https://s3.amazonaws.com/codecademy-content/courses/React/react_video-cute.mp4",
-    "https://s3.amazonaws.com/codecademy-content/courses/React/react_video-slow.mp4",
-    "https://s3.amazonaws.com/codecademy-content/courses/React/react_video-fast.mp4",
+  thumbnailImg: faker.image.image(),
+  srcUrl: faker.random.arrayElement([
+    "https://www.youtube.com/watch?v=oUFJJNQGwhk",
+    "https://www.youtube.com/watch?v=ysz5S6PUM-U",
+    "https://www.youtube.com/watch?v=jNgP6d9HraI",
   ]),
   duration: faker.datatype.number(),
 }));
