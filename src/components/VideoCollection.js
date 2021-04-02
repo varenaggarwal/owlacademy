@@ -1,10 +1,9 @@
 import { useData } from "../context/data-context";
-import { PLAY_VIDEO, ROUTE } from "../reducer/reducer";
+import { PLAY_VIDEO, ROUTE, TOGGLE_SAVE_VIDEO } from "../reducer/reducer";
 import { VideoPlayer } from "./VideoPlayer";
 
 export function VideoCollection() {
   const { state, dispatch } = useData();
-  const videoData = state.videoData;
 
   const playVideo = (video) => {
     dispatch({ type: ROUTE, payload: "videoTheatre" });
@@ -23,8 +22,17 @@ export function VideoCollection() {
           >
             Play
           </button>
+          <button
+            onClick={() =>
+              dispatch({ type: TOGGLE_SAVE_VIDEO, payload: video })
+            }
+            className="btn btn-secondary"
+          >
+            <i class="fas fa-bookmark"></i>
+          </button>
         </div>
       ))}
+      {console.log(state.savedVideos)}
     </div>
   );
 }

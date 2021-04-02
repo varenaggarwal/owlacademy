@@ -1,4 +1,5 @@
 import { useData } from "../context/data-context";
+import { AddToPlaylist } from "./AddToPlaylist";
 import { VideoPlayer } from "./VideoPlayer";
 
 export function VideoTheatre() {
@@ -14,6 +15,7 @@ export function VideoTheatre() {
         }}
       />
       <h2>{state.currentPlayingVideo.name}</h2>
+      <AddToPlaylist />
     </div>
   );
 }
