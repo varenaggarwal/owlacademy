@@ -10,6 +10,7 @@ export function VideoPlayer({ displayProperties }) {
         height="100%"
         controls={displayProperties.controls}
         playing={displayProperties.autoPlay}
+        onDuration={(duration) => console.log(duration)}
       />
     </div>
   );
