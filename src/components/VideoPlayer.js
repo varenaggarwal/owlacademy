@@ -9,6 +9,7 @@ export function VideoPlayer({ displayProperties }) {
         width="100%"
         height="100%"
         controls={displayProperties.controls}
+        playing={displayProperties.autoPlay}
       />
     </div>
   );
