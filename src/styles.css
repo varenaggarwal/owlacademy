@@ -9,7 +9,8 @@
 /* Video Player CSS */
 .player-wrapper {
   position: relative;
-  padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
+  padding-top: 56.25%;
+  /* Player ratio: 100 / (1280 / 720) */
 }
 
 .react-player {
@@ -20,4 +21,40 @@
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.video-collection {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+}
+
+.card {
+  margin: 0;
+}
+
+.card .img-responsive {
+  border-radius: 0.5rem;
+}
+
+.card .btn {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.videoTheater-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+@media only screen and (min-width: 768px) {
+  /* for desktop display */
+  .video-collection {
+    grid-template-columns: repeat(4, auto);
+  }
+
+  .player-container {
+    max-width: 768px;
+    margin-left: calc((100vw - 768px) / 2);
+  }
 }

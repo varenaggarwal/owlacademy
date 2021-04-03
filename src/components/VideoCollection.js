@@ -11,7 +11,7 @@ export function VideoCollection() {
   };
 
   return (
-    <div>
+    <div className="video-collection">
       {state.videoData.map((video) => (
         <div key={video.id} className="card">
           <div className="cursor-pointer" onClick={() => playVideo(video)}>
