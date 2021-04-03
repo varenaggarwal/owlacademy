@@ -6,4 +6,6 @@
 - ~Video Collection with cards~
 - ~One Video page~
 - ~Add to playlist~
+- ~side menu~
+- Routing
 - see all playlists

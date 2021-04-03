@@ -50,11 +50,26 @@
 @media only screen and (min-width: 768px) {
   /* for desktop display */
   .video-collection {
-    grid-template-columns: repeat(4, auto);
+    grid-area: video-collection;
+    grid-template-columns: repeat(3, auto);
   }
 
   .player-container {
     max-width: 768px;
     margin-left: calc((100vw - 768px) / 2);
+  }
+
+  .side-menu {
+    grid-area: side-menu;
+    /* width: 20vw; */
+    position: sticky;
+    top: 4rem;
+    height: calc(100vh - 4rem);
+    overflow-y: auto;
+  }
+
+  .video-collection-container {
+    display: grid;
+    grid-template-areas: "side-menu video-collection ";
   }
 }
