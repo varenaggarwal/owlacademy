@@ -7,12 +7,10 @@ export function AddToPlaylist({ video }) {
   const { state, dispatch } = useData();
   const [newPlaylistName, setNewPlaylistName] = useState("");
   const addNewPlaylist = () => {
-    console.log({ newPlaylistName, video });
     dispatch({ type: ADD_NEW_PLAYLIST, payload: { newPlaylistName, video } });
   };
 
   const toggleIntoPlaylist = (playlist) => {
-    console.log({ playlist, video });
     dispatch({ type: TOGGLE_INTO_PLAYLIST, payload: { playlist, video } });
   };
   const allPlaylists = Object.keys(state.userPlaylists);
@@ -20,7 +18,6 @@ export function AddToPlaylist({ video }) {
     <div>
       <h1>Playlist</h1>
       <div>
-        {console.log(state.userPlaylists)}
         {allPlaylists.map((playlist) => (
           <div>
             <input

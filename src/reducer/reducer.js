@@ -16,7 +16,11 @@ export const reducer = (state, action) => {
       return { ...state, route: action.payload };
 
     case PLAY_VIDEO:
-      return { ...state, currentPlayingVideo: action.payload };
+      return {
+        ...state,
+        currentPlayingVideo: action.payload,
+        watchHistory: [...state.watchHistory, action.payload],
+      };
 
     case TOGGLE_SAVE_VIDEO:
       return isIdPresentinArrayofObjects(state.savedVideos, action.payload.id)

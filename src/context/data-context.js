@@ -10,9 +10,10 @@ export function DataProvider({ children }) {
     route: "videoCollection",
     currentPlayingVideo: {},
     userPlaylists: {
-      saved: [],
+      WatchLater: [],
     },
     savedVideos: [],
+    watchHistory: [],
   });
 
   return (

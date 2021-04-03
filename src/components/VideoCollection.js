@@ -34,7 +34,6 @@ export function VideoCollection() {
           </button>
         </div>
       ))}
-      {console.log(state.savedVideos)}
     </div>
   );
 }
