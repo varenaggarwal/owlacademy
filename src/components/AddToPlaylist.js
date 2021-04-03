@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useData } from "../context/data-context";
 import { ADD_NEW_PLAYLIST, TOGGLE_INTO_PLAYLIST } from "../reducer/reducer";
+import { isIdPresentinArrayofObjects } from "../reducer/utility-operators";
 
 export function AddToPlaylist({ video }) {
   const { state, dispatch } = useData();
@@ -24,7 +25,10 @@ export function AddToPlaylist({ video }) {
           <div>
             <input
               onChange={() => toggleIntoPlaylist(playlist)}
-              // checked={}
+              checked={isIdPresentinArrayofObjects(
+                state.userPlaylists[playlist],
+                video.id
+              )}
               type="checkbox"
             ></input>
             <span>{playlist}</span>
