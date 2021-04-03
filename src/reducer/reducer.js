@@ -5,6 +5,7 @@ export const ROUTE = "ROUTE";
 export const PLAY_VIDEO = "PLAY_VIDEO";
 export const TOGGLE_SAVE_VIDEO = "TOGGLE_SAVE_VIDEO";
 export const ADD_NEW_PLAYLIST = "ADD_NEW_PLAYLIST";
+export const TOGGLE_INTO_PLAYLIST = "TOGGLE_INTO_PLAYLIST";
 
 export const reducer = (state, action) => {
   switch (action.type) {
@@ -35,6 +36,33 @@ export const reducer = (state, action) => {
           [action.payload.newPlaylistName]: [action.payload.video],
         },
       };
+
+    case TOGGLE_INTO_PLAYLIST:
+      return isIdPresentinArrayofObjects(
+        state.userPlaylists[action.payload.playlist],
+        action.payload.video.id
+      )
+        ? {
+            ...state,
+            userPlaylists: {
+              ...state.userPlaylists,
+              [action.payload.playlist]: state.userPlaylists[
+                action.payload.playlist
+              ].filter(
+                (videoObject) => videoObject.id !== action.payload.video.id
+              ),
+            },
+          }
+        : {
+            ...state,
+            userPlaylists: {
+              ...state.userPlaylists,
+              [action.payload.playlist]: [
+                ...state.userPlaylists[action.payload.playlist],
+                action.payload.video,
+              ],
+            },
+          };
 
     default:
       console.log("in default");

@@ -15,7 +15,7 @@ export function VideoTheatre() {
         }}
       />
       <h2>{state.currentPlayingVideo.name}</h2>
-      <AddToPlaylist />
+      <AddToPlaylist video={state.currentPlayingVideo} />
     </div>
   );
 }

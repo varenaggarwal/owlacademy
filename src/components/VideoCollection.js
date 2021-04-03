@@ -14,8 +14,10 @@ export function VideoCollection() {
     <div>
       {state.videoData.map((video) => (
         <div key={video.id} className="card">
-          <img src={video.thumbnailImg} />
-          <p>{video.name}</p>
+          <div className="cursor-pointer" onClick={() => playVideo(video)}>
+            <img className="img-responsive" src={video.thumbnailImg} />
+            <p>{video.name}</p>
+          </div>
           <button
             className="btn btn-secondary"
             onClick={() => playVideo(video)}
