@@ -15,6 +15,7 @@ export function VideoTheatre() {
         }}
       />
       <h2>{state.currentPlayingVideo.name}</h2>
+      <p>{state.currentPlayingVideo.duration}</p>
       <AddToPlaylist video={state.currentPlayingVideo} />
     </div>
   );

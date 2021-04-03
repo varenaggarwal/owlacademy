@@ -18,19 +18,21 @@ export function AddToPlaylist({ video }) {
     <div>
       <h1>Playlist</h1>
       <div>
-        {allPlaylists.map((playlist) => (
-          <div>
-            <input
-              onChange={() => toggleIntoPlaylist(playlist)}
-              checked={isIdPresentinArrayofObjects(
-                state.userPlaylists[playlist],
-                video.id
-              )}
-              type="checkbox"
-            ></input>
-            <span>{playlist}</span>
-          </div>
-        ))}
+        <ul className="list">
+          {allPlaylists.map((playlist) => (
+            <li key={playlist}>
+              <input
+                onChange={() => toggleIntoPlaylist(playlist)}
+                checked={isIdPresentinArrayofObjects(
+                  state.userPlaylists[playlist],
+                  video.id
+                )}
+                type="checkbox"
+              ></input>
+              <span>{playlist}</span>
+            </li>
+          ))}
+        </ul>
         <input
           onChange={(event) => setNewPlaylistName(event.target.value)}
         ></input>

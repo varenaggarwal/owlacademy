@@ -37,7 +37,7 @@ export const reducer = (state, action) => {
         ...state,
         userPlaylists: {
           ...state.userPlaylists,
-          [action.payload.newPlaylistName]: [action.payload.video],
+          [action.payload.newPlaylistName]: [],
         },
       };
 

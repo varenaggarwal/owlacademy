@@ -30,7 +30,7 @@ export function VideoCollection() {
             }
             className="btn btn-secondary"
           >
-            <i class="fas fa-bookmark"></i>
+            <i className="fas fa-bookmark"></i>
           </button>
         </div>
       ))}
