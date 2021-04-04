@@ -2,9 +2,9 @@
 
 .App {
   font-family: sans-serif;
-  text-align: center;
   background-color: var(--secondary-color-two);
   min-height: 100vh;
+  color: var(--primary-color);
 }
 
 /* Video Player CSS */
@@ -48,6 +48,10 @@
   flex-wrap: nowrap;
 }
 
+.display-unset {
+  display: unset;
+}
+
 @media only screen and (min-width: 768px) {
   /* for desktop display */
   .video-collection {
@@ -77,13 +81,16 @@
   }
 
   .player-container {
-    max-width: 720px;
+    max-width: 820px;
     /* margin-left: calc((80vw - 720px) / 2); */
+  }
+  .video-info {
+    max-width: 820px;
   }
 
   .side-menu {
     grid-area: side-menu;
-    width: 20vw;
+    /* width: 20vw; */
     position: sticky;
     top: 0;
     /* top: 4rem; */

@@ -10,4 +10,6 @@ export const apiVideoData = [...Array(20)].map((item) => ({
     "https://www.youtube.com/watch?v=jNgP6d9HraI",
   ]),
   duration: faker.datatype.number(),
+  description: faker.commerce.productDescription(),
+  userNotes: "",
 }));
