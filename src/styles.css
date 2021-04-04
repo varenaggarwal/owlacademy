@@ -4,7 +4,7 @@
   font-family: sans-serif;
   text-align: center;
   background-color: var(--secondary-color-two);
-  height: 100vh;
+  min-height: 100vh;
 }
 
 /* Video Player CSS */
@@ -77,14 +77,15 @@
   }
 
   .player-container {
-    max-width: 768px;
-    margin-left: calc((100vw - 768px) / 2);
+    max-width: 720px;
+    /* margin-left: calc((80vw - 720px) / 2); */
   }
 
   .side-menu {
     grid-area: side-menu;
     width: 20vw;
     position: sticky;
+    top: 0;
     /* top: 4rem; */
     /* height: calc(100vh - 4rem); */
     height: 100vh;
