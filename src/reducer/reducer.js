@@ -13,10 +13,12 @@ export const reducer = (state, action) => {
       return { ...state, videoData: action.payload };
 
     case ADD_TO_WATCH_HISTORY:
-      return {
-        ...state,
-        watchHistory: [...state.watchHistory, action.payload],
-      };
+      return isIdPresentinArrayofObjects(state.watchHistory, action.payload.id)
+        ? { ...state }
+        : {
+            ...state,
+            watchHistory: [...state.watchHistory, action.payload],
+          };
 
     case TOGGLE_SAVE_VIDEO:
       return isIdPresentinArrayofObjects(state.savedVideos, action.payload.id)
