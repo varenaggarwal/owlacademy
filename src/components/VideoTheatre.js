@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom";
 import { useData } from "../context/data-context";
 import { AddToPlaylist } from "./AddToPlaylist";
 import { VideoPlayer } from "./VideoPlayer";
-import { PLAY_VIDEO } from "../reducer/reducer";
+import { ADD_TO_WATCH_HISTORY } from "../reducer/reducer";
 import { useEffect } from "react";
 
 export function VideoTheatre() {
@@ -10,7 +10,7 @@ export function VideoTheatre() {
   const routeLocation = useLocation();
 
   useEffect(() => {
-    dispatch({ type: PLAY_VIDEO, payload: routeLocation.state });
+    dispatch({ type: ADD_TO_WATCH_HISTORY, payload: routeLocation.state });
   }, []);
 
   console.log(state.watchHistory);

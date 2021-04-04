@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 import { useData } from "../context/data-context";
-import { PLAY_VIDEO, ROUTE, TOGGLE_SAVE_VIDEO } from "../reducer/reducer";
+import {
+  ADD_TO_WATCH_HISTORY,
+  ROUTE,
+  TOGGLE_SAVE_VIDEO,
+} from "../reducer/reducer";
 import { SideMenu } from "./SideMenu";
 import { VideoPlayer } from "./VideoPlayer";
 
@@ -9,7 +13,7 @@ export function VideoCollection() {
 
   const playVideo = (video) => {
     dispatch({ type: ROUTE, payload: "videoTheatre" });
-    dispatch({ type: PLAY_VIDEO, payload: video });
+    dispatch({ type: ADD_TO_WATCH_HISTORY, payload: video });
   };
 
   return (

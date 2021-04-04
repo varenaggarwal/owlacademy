@@ -2,7 +2,7 @@ import { isIdPresentinArrayofObjects } from "./utility-operators";
 
 export const INITIAL_LOAD = "INITIAL_LOAD";
 export const ROUTE = "ROUTE";
-export const PLAY_VIDEO = "PLAY_VIDEO";
+export const ADD_TO_WATCH_HISTORY = "ADD_TO_WATCH_HISTORY";
 export const TOGGLE_SAVE_VIDEO = "TOGGLE_SAVE_VIDEO";
 export const ADD_NEW_PLAYLIST = "ADD_NEW_PLAYLIST";
 export const TOGGLE_INTO_PLAYLIST = "TOGGLE_INTO_PLAYLIST";
@@ -12,7 +12,7 @@ export const reducer = (state, action) => {
     case INITIAL_LOAD:
       return { ...state, videoData: action.payload };
 
-    case PLAY_VIDEO:
+    case ADD_TO_WATCH_HISTORY:
       return {
         ...state,
         watchHistory: [...state.watchHistory, action.payload],
