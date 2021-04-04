@@ -17,7 +17,7 @@ export function SideMenu() {
             <span>
               <i className="fas fa-history"></i>
             </span>
-            <span> Watch History</span>
+            <span>History</span>
           </li>
         </Link>
         <Link to="/bookmarked">

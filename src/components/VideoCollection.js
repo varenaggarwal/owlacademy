@@ -5,7 +5,6 @@ import {
   ROUTE,
   TOGGLE_SAVE_VIDEO,
 } from "../reducer/reducer";
-import { SideMenu } from "./SideMenu";
 import { VideoPlayer } from "./VideoPlayer";
 
 export function VideoCollection() {
@@ -17,24 +16,22 @@ export function VideoCollection() {
   };
 
   return (
-    <div className="video-collection-container">
-      <SideMenu />
-      <div className="video-collection">
-        {state.videoData.map((video) => (
-          <div key={video.id} className="card">
-            {/* <div className="cursor-pointer" onClick={() => playVideo(video)}> */}
-            <Link to={{ pathname: `/watch/${video.id}` }} state={video}>
-              <img className="img-responsive" src={video.thumbnailImg} />
-              <p>{video.name}</p>
-            </Link>
-            {/* </div> */}
-            {/* <button
+    <div className="video-collection">
+      {state.videoData.map((video) => (
+        <div key={video.id} className="card">
+          {/* <div className="cursor-pointer" onClick={() => playVideo(video)}> */}
+          <Link to={{ pathname: `/watch/${video.id}` }} state={video}>
+            <img className="img-responsive" src={video.thumbnailImg} />
+            <p>{video.name}</p>
+          </Link>
+          {/* </div> */}
+          {/* <button
               className="btn btn-secondary"
               onClick={() => playVideo(video)}
             >
               Play
             </button> */}
-            {/* <button
+          {/* <button
               onClick={() =>
                 dispatch({ type: TOGGLE_SAVE_VIDEO, payload: video })
               }
@@ -42,9 +39,8 @@ export function VideoCollection() {
             >
               <i className="fas fa-bookmark"></i>
             </button> */}
-          </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
   );
 }
