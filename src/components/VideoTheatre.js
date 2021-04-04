@@ -45,7 +45,14 @@ export function VideoTheatre() {
         id="myModal"
         className={displayNotes ? "modal display-unset" : "modal"}
       >
-        <div class="modal-content">Lorem ipsum dolor</div>
+        <div class="modal-content">
+          <span onClick={() => setDisplayNotes(false)} className="close">
+            <i class="far fa-window-close"></i>
+          </span>
+          Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum
+          dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem
+          ipsum dolor Lorem ipsum dolor Lorem ipsum dolor
+        </div>
       </div>
       <AddToPlaylist video={routeLocation.state} />
     </div>
