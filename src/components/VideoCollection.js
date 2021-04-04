@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useData } from "../context/data-context";
 import { PLAY_VIDEO, ROUTE, TOGGLE_SAVE_VIDEO } from "../reducer/reducer";
 import { SideMenu } from "./SideMenu";
@@ -17,10 +18,12 @@ export function VideoCollection() {
       <div className="video-collection">
         {state.videoData.map((video) => (
           <div key={video.id} className="card">
-            <div className="cursor-pointer" onClick={() => playVideo(video)}>
+            {/* <div className="cursor-pointer" onClick={() => playVideo(video)}> */}
+            <Link to={{ pathname: `/watch/${video.id}` }} state={video}>
               <img className="img-responsive" src={video.thumbnailImg} />
               <p>{video.name}</p>
-            </div>
+            </Link>
+            {/* </div> */}
             {/* <button
               className="btn btn-secondary"
               onClick={() => playVideo(video)}

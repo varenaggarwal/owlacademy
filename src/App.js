@@ -14,7 +14,7 @@ export default function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<VideoCollection />} />
-        <Route path="/watch" element={<VideoTheatre />} />
+        <Route path="/watch/:videoId" element={<VideoTheatre />} />
       </Routes>
     </div>
   );

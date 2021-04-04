@@ -5,7 +5,7 @@ export function Navbar() {
   const { state, dispatch } = useData();
   return (
     <nav className="nav-bar nav-bar-shadow">
-      <button
+      {/* <button
         className={
           state.route === "videoCollection"
             ? "visibility-hidden"
@@ -14,7 +14,7 @@ export function Navbar() {
         onClick={() => dispatch({ type: ROUTE, payload: "videoCollection" })}
       >
         <i className="fas fa-arrow-left"></i>
-      </button>
+      </button> */}
       Video Lab
     </nav>
   );

@@ -15,7 +15,6 @@ export const reducer = (state, action) => {
     case PLAY_VIDEO:
       return {
         ...state,
-        currentPlayingVideo: action.payload,
         watchHistory: [...state.watchHistory, action.payload],
       };
 
