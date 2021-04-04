@@ -12,9 +12,6 @@ export const reducer = (state, action) => {
     case INITIAL_LOAD:
       return { ...state, videoData: action.payload };
 
-    case ROUTE:
-      return { ...state, route: action.payload };
-
     case PLAY_VIDEO:
       return {
         ...state,

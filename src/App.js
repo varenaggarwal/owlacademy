@@ -1,10 +1,10 @@
+import "./styles.css";
 import { Navbar } from "./components/Navbar";
-import { VideoPlayer } from "./components/VideoPlayer";
 import { VideoCollection } from "./components/VideoCollection";
 import { VideoTheatre } from "./components/VideoTheatre";
 import { useData } from "./context/data-context";
-import "./styles.css";
 import { useVideoListing } from "./hooks/useVideoListing";
+import { Routes, Route } from "react-router-dom";
 
 export default function App() {
   const { state } = useData();
@@ -12,8 +12,10 @@ export default function App() {
   return (
     <div className="App">
       <Navbar />
-      {state.route === "videoCollection" && <VideoCollection />}
-      {state.route === "videoTheatre" && <VideoTheatre />}
+      <Routes>
+        <Route path="/" element={<VideoCollection />} />
+        <Route path="/watch" element={<VideoTheatre />} />
+      </Routes>
     </div>
   );
 }

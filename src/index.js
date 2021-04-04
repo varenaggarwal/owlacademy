@@ -6,11 +6,15 @@ import setupMockServer from "./api/mock-server";
 
 setupMockServer();
 
+import { BrowserRouter as Router } from "react-router-dom";
+
 const rootElement = document.getElementById("root");
 ReactDOM.render(
   <StrictMode>
     <DataProvider>
-      <App />
+      <Router>
+        <App />
+      </Router>
     </DataProvider>
   </StrictMode>,
   rootElement
