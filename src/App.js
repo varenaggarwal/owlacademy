@@ -10,6 +10,7 @@ import { WatchHistory } from "./pages/private/WatchHistory";
 import { Bookmarked } from "./pages/private/Bookmarked";
 import { Playlists } from "./pages/private/Playlists";
 import { SideMenu } from "./components/SideMenu";
+import { Login } from "./pages/Login";
 
 export default function App() {
   const { state } = useData();
@@ -25,6 +26,7 @@ export default function App() {
           <Route path="/bookmarked" element={<Bookmarked />} />
           <Route path="/playlists" element={<Playlists />} />
           <Route path="/watch/:videoId" element={<VideoTheatre />} />
+          <Route path="/login" element={<Login />} />
           <Route path="*" element={<LostPage />} />
         </Routes>
       </div>
