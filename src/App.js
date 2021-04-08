@@ -2,7 +2,7 @@ import "./styles.css";
 import { Navbar } from "./components/Navbar";
 import { VideoCollection } from "./pages/VideoCollection";
 import { VideoTheatre } from "./pages/VideoTheatre";
-import { useData } from "./context/data-context";
+import { useData } from "./contexts/data-context";
 import { useVideoListing } from "./hooks/useVideoListing";
 import { Routes, Route } from "react-router-dom";
 import { LostPage } from "./pages/LostPage";

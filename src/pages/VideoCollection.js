@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useData } from "../context/data-context";
+import { useData } from "../contexts/data-context";
 import {
   ADD_TO_WATCH_HISTORY,
   ROUTE,

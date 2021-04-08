@@ -1,4 +1,4 @@
-import { useData } from "../context/data-context";
+import { useData } from "../contexts/data-context";
 import { ROUTE } from "../reducer/reducer";
 
 export function Navbar() {

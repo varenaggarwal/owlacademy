@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useData } from "../context/data-context";
+import { useData } from "../contexts/data-context";
 import axios from "axios";
 import { INITIAL_LOAD } from "../reducer/reducer";
 
