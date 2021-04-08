@@ -1,14 +1,14 @@
 import "./styles.css";
 import { Navbar } from "./components/Navbar";
-import { VideoCollection } from "./components/VideoCollection";
-import { VideoTheatre } from "./components/VideoTheatre";
+import { VideoCollection } from "./pages/VideoCollection";
+import { VideoTheatre } from "./pages/VideoTheatre";
 import { useData } from "./context/data-context";
 import { useVideoListing } from "./hooks/useVideoListing";
 import { Routes, Route } from "react-router-dom";
-import { LostPage } from "./components/LostPage";
-import { WatchHistory } from "./components/WatchHistory";
-import { Bookmarked } from "./components/Bookmarked";
-import { Playlists } from "./components/Playlists";
+import { LostPage } from "./pages/LostPage";
+import { WatchHistory } from "./pages/private/WatchHistory";
+import { Bookmarked } from "./pages/private/Bookmarked";
+import { Playlists } from "./pages/private/Playlists";
 import { SideMenu } from "./components/SideMenu";
 
 export default function App() {

@@ -5,7 +5,7 @@ import {
   ROUTE,
   TOGGLE_SAVE_VIDEO,
 } from "../reducer/reducer";
-import { VideoPlayer } from "./VideoPlayer";
+import { VideoPlayer } from "../components/VideoPlayer";
 
 export function VideoCollection() {
   const { state, dispatch } = useData();

@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useData } from "../context/data-context";
-import { AddToPlaylist } from "./AddToPlaylist";
-import { VideoPlayer } from "./VideoPlayer";
+import { AddToPlaylist } from "../components/AddToPlaylist";
+import { VideoPlayer } from "../components/VideoPlayer";
 import { ADD_TO_WATCH_HISTORY } from "../reducer/reducer";
 import { useEffect, useState } from "react";
 
