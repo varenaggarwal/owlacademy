@@ -52,13 +52,14 @@ export function Notes({ video }) {
         </button>
       </form>
       {console.log({ video })}
-      {console.log({ state })}
-      {video.userNotes.map((note) => {
-        <div>
-          <div>{note.title}</div>
-          <div>{note.content}</div>
-        </div>;
-      })}
+      <ul>
+        {video.userNotes.map((note) => (
+          <div>
+            <h1>{note.title}</h1>
+            <p>{note.content}</p>
+          </div>
+        ))}
+      </ul>
     </div>
   );
 }

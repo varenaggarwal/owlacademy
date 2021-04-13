@@ -8,19 +8,16 @@ import { Notes } from "../components/Notes";
 
 export function VideoTheatre() {
   const { state, dispatch } = useData();
-
-  // i can find this here and get the state and pass the state
   const { videoId } = useParams();
-
-  const getVideoDetails = (videoData, videoId) => {
-    return videoData.find((video) => video.id === videoId);
-  };
-
-  const currentVideo = getVideoDetails(state.videoData, videoId);
 
   useEffect(() => {
     dispatch({ type: ADD_TO_WATCH_HISTORY, payload: currentVideo });
   }, []);
+
+  const getVideoDetails = (videoData, videoId) => {
+    return videoData.find((video) => video.id === videoId);
+  };
+  const currentVideo = getVideoDetails(state.videoData, videoId);
 
   console.log(state.watchHistory);
   return (
