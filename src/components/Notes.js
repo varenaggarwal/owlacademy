@@ -15,10 +15,6 @@ export function Notes({ video }) {
   };
 
   const addNote = (event) => {
-    console.log({
-      type: ADD_NEW_USERNOTE,
-      payload: { id: video.id, newNote: { ...newNote, id: uuid() } },
-    });
     dispatch({
       type: ADD_NEW_USERNOTE,
       payload: { id: video.id, newNote: { ...newNote, id: uuid() } },
@@ -51,7 +47,6 @@ export function Notes({ video }) {
           Add
         </button>
       </form>
-      {console.log({ video })}
       <ul>
         {video.userNotes.map((note) => (
           <div>
