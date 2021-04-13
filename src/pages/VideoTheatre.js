@@ -4,6 +4,7 @@ import { AddToPlaylist } from "../components/AddToPlaylist";
 import { VideoPlayer } from "../components/VideoPlayer";
 import { ADD_TO_WATCH_HISTORY } from "../reducer/reducer";
 import { useEffect, useState } from "react";
+import { Notes } from "../components/Notes";
 
 export function VideoTheatre() {
   const { state, dispatch } = useData();
@@ -41,7 +42,8 @@ export function VideoTheatre() {
           <i class="fas fa-sticky-note"></i> <span>Add your Notes</span>
         </button>
       </div>
-      <div
+      <Notes video={routeLocation.state} />
+      {/* <div
         id="myModal"
         className={displayNotes ? "modal display-unset" : "modal"}
       >
@@ -53,8 +55,8 @@ export function VideoTheatre() {
           dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem
           ipsum dolor Lorem ipsum dolor Lorem ipsum dolor
         </div>
-      </div>
-      <AddToPlaylist video={routeLocation.state} />
+      </div> */}
+      {/* <AddToPlaylist video={routeLocation.state} /> */}
     </div>
   );
 }

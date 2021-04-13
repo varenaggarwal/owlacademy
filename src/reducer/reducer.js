@@ -6,6 +6,7 @@ export const ADD_TO_WATCH_HISTORY = "ADD_TO_WATCH_HISTORY";
 export const TOGGLE_SAVE_VIDEO = "TOGGLE_SAVE_VIDEO";
 export const ADD_NEW_PLAYLIST = "ADD_NEW_PLAYLIST";
 export const TOGGLE_INTO_PLAYLIST = "TOGGLE_INTO_PLAYLIST";
+export const ADD_NEW_USERNOTE = "ADD_NEW_USERNOTE";
 
 export const reducer = (state, action) => {
   switch (action.type) {
@@ -37,6 +38,19 @@ export const reducer = (state, action) => {
           ...state.userPlaylists,
           [action.payload.newPlaylistName]: [],
         },
+      };
+
+    case ADD_NEW_USERNOTE:
+      return {
+        ...state,
+        videoData: state.videoData.map((videoObject) =>
+          videoObject.id === action.payload.id
+            ? {
+                ...videoObject,
+                userNotes: [...videoObject.userNotes, action.payload.newNote],
+              }
+            : videoObject
+        ),
       };
 
     case TOGGLE_INTO_PLAYLIST:

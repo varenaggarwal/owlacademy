@@ -11,5 +11,5 @@ export const apiVideoData = [...Array(20)].map((item) => ({
   ]),
   duration: faker.datatype.number(),
   description: faker.commerce.productDescription(),
-  userNotes: "",
+  userNotes: [],
 }));
