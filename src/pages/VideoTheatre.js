@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { useData } from "../contexts/data-context";
 import { AddToPlaylist } from "../components/AddToPlaylist";
 import { VideoPlayer } from "../components/VideoPlayer";
@@ -8,17 +8,19 @@ import { Notes } from "../components/Notes";
 
 export function VideoTheatre() {
   const { state, dispatch } = useData();
-  const routeLocation = useLocation();
 
   // i can find this here and get the state and pass the state
+  const { videoId } = useParams();
 
-  console.log(routeLocation);
+  const getVideoDetails = (videoData, videoId) => {
+    return videoData.find((video) => video.id === videoId);
+  };
+
+  const currentVideo = getVideoDetails(state.videoData, videoId);
 
   useEffect(() => {
-    dispatch({ type: ADD_TO_WATCH_HISTORY, payload: routeLocation.state });
+    dispatch({ type: ADD_TO_WATCH_HISTORY, payload: currentVideo });
   }, []);
-
-  const [displayNotes, setDisplayNotes] = useState(false);
 
   console.log(state.watchHistory);
   return (
@@ -28,14 +30,14 @@ export function VideoTheatre() {
           displayProperties={{
             controls: true,
             autoPlay: true,
-            srcUrl: routeLocation.state.srcUrl,
+            srcUrl: currentVideo.srcUrl,
           }}
         />
       </div>
       <div className="video-info">
-        <h2>{routeLocation.state.name}</h2>
-        <p>{routeLocation.state.duration}</p>
-        <div>{routeLocation.state.description}</div>
+        <h2>{currentVideo.name}</h2>
+        <p>{currentVideo.duration}</p>
+        <div>{currentVideo.description}</div>
         <button className="btn btn-secondary">
           <i class="fas fa-list"></i> <span>Add to Playlist</span>
         </button>
@@ -46,7 +48,7 @@ export function VideoTheatre() {
           <i class="fas fa-sticky-note"></i> <span>Add your Notes</span>
         </button>
       </div>
-      <Notes video={routeLocation.state} />
+      <Notes video={currentVideo} />
       {/* <div
         id="myModal"
         className={displayNotes ? "modal display-unset" : "modal"}
@@ -60,7 +62,7 @@ export function VideoTheatre() {
           ipsum dolor Lorem ipsum dolor Lorem ipsum dolor
         </div>
       </div> */}
-      {/* <AddToPlaylist video={routeLocation.state} /> */}
+      {/* <AddToPlaylist video={currentVideo} /> */}
     </div>
   );
 }
