@@ -10,6 +10,10 @@ export function VideoTheatre() {
   const { state, dispatch } = useData();
   const routeLocation = useLocation();
 
+  // i can find this here and get the state and pass the state
+
+  console.log(routeLocation);
+
   useEffect(() => {
     dispatch({ type: ADD_TO_WATCH_HISTORY, payload: routeLocation.state });
   }, []);

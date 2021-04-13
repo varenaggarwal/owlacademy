@@ -41,6 +41,15 @@ export const reducer = (state, action) => {
       };
 
     case ADD_NEW_USERNOTE:
+      console.log({ state });
+      return {
+        ...state,
+        videoData: state.videoData.map((videoObject) =>
+          videoObject.id === action.payload.id
+            ? { ...videoObject, userNotes: ["here"] }
+            : videoObject
+        ),
+      };
       return {
         ...state,
         videoData: state.videoData.map((videoObject) =>

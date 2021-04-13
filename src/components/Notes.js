@@ -15,13 +15,14 @@ export function Notes({ video }) {
   };
 
   const addNote = (event) => {
-    console.log({ newNote });
+    console.log({
+      type: ADD_NEW_USERNOTE,
+      payload: { id: video.id, newNote: { ...newNote, id: uuid() } },
+    });
     dispatch({
       type: ADD_NEW_USERNOTE,
       payload: { id: video.id, newNote: { ...newNote, id: uuid() } },
     });
-    console.log({ video });
-    console.log({ state });
     event.preventDefault();
   };
 
@@ -50,13 +51,14 @@ export function Notes({ video }) {
           Add
         </button>
       </form>
+      {console.log({ video })}
+      {console.log({ state })}
       {video.userNotes.map((note) => {
         <div>
           <div>{note.title}</div>
           <div>{note.content}</div>
         </div>;
       })}
-      {console.log(video.userNotes)}
     </div>
   );
 }
