@@ -5,7 +5,7 @@ import uuid from "react-uuid";
 
 export function Notes({ video }) {
   const [newNote, setNewNote] = useState({ title: "", content: "" });
-  const { state, dispatch } = useData();
+  const { dispatch } = useData();
 
   const changeNote = (e) => {
     const { name, value } = e.target;
@@ -19,6 +19,7 @@ export function Notes({ video }) {
       type: ADD_NEW_USERNOTE,
       payload: { id: video.id, newNote: { ...newNote, id: uuid() } },
     });
+    setNewNote({ title: "", content: "" });
     event.preventDefault();
   };
 
@@ -44,12 +45,12 @@ export function Notes({ video }) {
           ></textarea>
         </p>
         <button className="btn" onClick={addNote}>
-          Add
+          <i className="fas fa-plus"></i>
         </button>
       </form>
       <ul>
         {video.userNotes.map((note) => (
-          <div>
+          <div key={note.id}>
             <h1>{note.title}</h1>
             <p>{note.content}</p>
           </div>

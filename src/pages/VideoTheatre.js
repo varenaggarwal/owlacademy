@@ -18,8 +18,10 @@ export function VideoTheatre() {
     return videoData.find((video) => video.id === videoId);
   };
   const currentVideo = getVideoDetails(state.videoData, videoId);
+  if (!currentVideo) {
+    return <div>Loading</div>;
+  }
 
-  console.log(state.watchHistory);
   return (
     <div className="videoTheater-container">
       <div className="player-container">
@@ -59,7 +61,7 @@ export function VideoTheatre() {
           ipsum dolor Lorem ipsum dolor Lorem ipsum dolor
         </div>
       </div> */}
-      {/* <AddToPlaylist video={currentVideo} /> */}
+      <AddToPlaylist video={currentVideo} />
     </div>
   );
 }
