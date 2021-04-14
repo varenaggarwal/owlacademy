@@ -7,6 +7,8 @@ import { useEffect, useState } from "react";
 import { Notes } from "../components/Notes";
 
 export function VideoTheatre() {
+  const [displayNotes, setDisplayNotes] = useState(false);
+
   const { state, dispatch } = useData();
   const { videoId } = useParams();
 
@@ -37,18 +39,15 @@ export function VideoTheatre() {
         <h2>{currentVideo.name}</h2>
         <p>{currentVideo.duration}</p>
         <div>{currentVideo.description}</div>
-        <button className="btn btn-secondary">
-          <i class="fas fa-list"></i> <span>Add to Playlist</span>
-        </button>
         <button
           className="btn btn-secondary"
           onClick={() => setDisplayNotes(true)}
         >
-          <i class="fas fa-sticky-note"></i> <span>Add your Notes</span>
+          <i class="fas fa-list"></i> <span>Add to Playlist</span>
         </button>
       </div>
       <Notes video={currentVideo} />
-      {/* <div
+      <div
         id="myModal"
         className={displayNotes ? "modal display-unset" : "modal"}
       >
@@ -56,12 +55,9 @@ export function VideoTheatre() {
           <span onClick={() => setDisplayNotes(false)} className="close">
             <i class="far fa-window-close"></i>
           </span>
-          Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum
-          dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem
-          ipsum dolor Lorem ipsum dolor Lorem ipsum dolor
+          <AddToPlaylist video={currentVideo} />
         </div>
-      </div> */}
-      <AddToPlaylist video={currentVideo} />
+      </div>
     </div>
   );
 }
