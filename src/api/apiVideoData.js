@@ -12,7 +12,7 @@ export const apiVideoData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(
     ]),
     duration: faker.datatype.number(),
     description: faker.commerce.productDescription(),
-    userNotes: "This is me Varen",
+    userNotes: "",
   })
 );
 
