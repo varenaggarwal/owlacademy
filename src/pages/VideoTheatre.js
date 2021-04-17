@@ -46,7 +46,9 @@ export function VideoTheatre() {
           <i class="fas fa-list"></i> <span>Add to Playlist</span>
         </button>
       </div>
-      <Notes video={currentVideo} />
+      <div className="notes-container">
+        {/* <Notes video={currentVideo} /> */}
+      </div>
       <div
         id="myModal"
         className={displayNotes ? "modal display-unset" : "modal"}

@@ -1,3 +1,4 @@
+import { VideoBanners } from "../../components/VideoBanner";
 import { useData } from "../../contexts/data-context";
 
 export function Playlists() {
@@ -8,12 +9,16 @@ export function Playlists() {
   return (
     <div className="playlist-container">
       <h1>Playlists</h1>
-      {userPlaylists.map((playlist) => {
-        // console.log("inherre");
-        <h2>Hi</h2>;
-      })}
-      <h1>Hello</h1>
-      {console.log(userPlaylists)}
+      {userPlaylists.map((playlist) => (
+        <div>
+          <h2>{playlist}</h2>
+          <div>
+            {state.userPlaylists[playlist].map((video) => (
+              <VideoBanners video={video} />
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
