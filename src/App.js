@@ -11,6 +11,7 @@ import { Bookmarked } from "./pages/private/Bookmarked";
 import { Playlists } from "./pages/private/Playlists";
 import { SideMenu } from "./components/SideMenu";
 import { Login } from "./pages/Login";
+import { BottomNavigation } from "./components/BottomNavigation";
 
 export default function App() {
   const { state } = useData();
@@ -18,7 +19,7 @@ export default function App() {
   return (
     <div className="App">
       <div className="main-container">
-        {/* <Navbar /> */}
+        <Navbar />
         <SideMenu />
         <Routes>
           <Route path="/" element={<VideoCollection />} />
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="*" element={<LostPage />} />
         </Routes>
+        <BottomNavigation />
       </div>
     </div>
   );
