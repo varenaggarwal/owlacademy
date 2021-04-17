@@ -2,13 +2,12 @@ import { useLocation, useParams } from "react-router-dom";
 import { useData } from "../contexts/data-context";
 import { AddToPlaylist } from "../components/AddToPlaylist";
 import { VideoPlayer } from "../components/VideoPlayer";
-import { ADD_TO_WATCH_HISTORY } from "../reducer/reducer";
+import { ADD_TO_WATCH_HISTORY, UPDATE_NOTE } from "../reducer/reducer";
 import { useEffect, useState } from "react";
 import { Notes } from "../components/Notes";
 
 export function VideoTheatre() {
   const [displayNotes, setDisplayNotes] = useState(false);
-
   const { state, dispatch } = useData();
   const { videoId } = useParams();
 
@@ -20,9 +19,14 @@ export function VideoTheatre() {
     return videoData.find((video) => video.id === videoId);
   };
   const currentVideo = getVideoDetails(state.videoData, videoId);
-  if (!currentVideo) {
-    return <div>Loading</div>;
-  }
+
+  const changeNote = () => {
+    console.log("Hello in change note", currentVideo.userNotes);
+    dispatch({
+      type: UPDATE_NOTE,
+      payload: { id: currentVideo.id, note: currentVideo.userNotes },
+    });
+  };
 
   return (
     <div className="videoTheater-container">
@@ -43,8 +47,17 @@ export function VideoTheatre() {
           className="btn btn-secondary"
           onClick={() => setDisplayNotes(true)}
         >
-          <i class="fas fa-list"></i> <span>Add to Playlist</span>
+          <i className="fas fa-list"></i> <span>Add to Playlist</span>
         </button>
+        <h2>ScriplePad</h2>
+        <textarea
+          className="textbox"
+          value={currentVideo.userNotes}
+          name="content"
+          placeholder="Take a note..."
+          onChange={changeNote}
+          rows={3}
+        ></textarea>
       </div>
       {/* <div className="notes-container">
         <Notes video={currentVideo} />
@@ -54,9 +67,9 @@ export function VideoTheatre() {
         id="myModal"
         className={displayNotes ? "modal display-unset" : "modal"}
       >
-        <div class="modal-content">
+        <div className="modal-content">
           <span onClick={() => setDisplayNotes(false)} className="close">
-            <i class="far fa-window-close"></i>
+            <i className="far fa-window-close"></i>
           </span>
           <AddToPlaylist video={currentVideo} />
         </div>

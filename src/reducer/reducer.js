@@ -7,6 +7,7 @@ export const TOGGLE_SAVE_VIDEO = "TOGGLE_SAVE_VIDEO";
 export const ADD_NEW_PLAYLIST = "ADD_NEW_PLAYLIST";
 export const TOGGLE_INTO_PLAYLIST = "TOGGLE_INTO_PLAYLIST";
 export const ADD_NEW_USERNOTE = "ADD_NEW_USERNOTE";
+export const UPDATE_NOTE = "UPDATE_NOTE";
 
 export const reducer = (state, action) => {
   switch (action.type) {
@@ -48,6 +49,20 @@ export const reducer = (state, action) => {
             ? {
                 ...videoObject,
                 userNotes: [...videoObject.userNotes, action.payload.newNote],
+              }
+            : videoObject
+        ),
+      };
+
+    case UPDATE_NOTE:
+      console.log("in the update note");
+      return {
+        ...state,
+        videoData: state.videoData.map((videoObject) =>
+          videoObject.id === action.payload.id
+            ? {
+                ...videoObject,
+                userNotes: "Ipda",
               }
             : videoObject
         ),

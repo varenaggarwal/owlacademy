@@ -12,10 +12,18 @@ import { Playlists } from "./pages/private/Playlists";
 import { SideMenu } from "./components/SideMenu";
 import { Login } from "./pages/Login";
 import { BottomNavigation } from "./components/BottomNavigation";
+import { LoadingScreen } from "./components/LoadingScreen";
 
 export default function App() {
-  const { state } = useData();
   const { isLoading } = useVideoListing();
+
+  if (isLoading) {
+    return (
+      <div className="App">
+        <LoadingScreen />
+      </div>
+    );
+  }
   return (
     <div className="App">
       <div className="main-container">
