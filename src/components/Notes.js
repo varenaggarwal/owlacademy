@@ -59,3 +59,36 @@ export function Notes({ video }) {
     </div>
   );
 }
+
+// this is for add notes
+
+// case ADD_NEW_USERNOTE:
+//       return {
+//         ...state,
+//         videoData: state.videoData.map((videoObject) =>
+//           videoObject.id === action.payload.id
+//             ? {
+//                 ...videoObject,
+//                 userNotes: [...videoObject.userNotes, action.payload.newNote],
+//               }
+//             : videoObject
+//         ),
+//       };
+
+// import faker from "faker";
+
+// export const apiVideoData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(
+//   (item) => ({
+//     id: item,
+//     name: faker.commerce.productName(),
+//     thumbnailImg: faker.image.image(),
+//     srcUrl: faker.random.arrayElement([
+//       "https://www.youtube.com/watch?v=oUFJJNQGwhk",
+//       "https://www.youtube.com/watch?v=ysz5S6PUM-U",
+//       "https://www.youtube.com/watch?v=jNgP6d9HraI",
+//     ]),
+//     duration: faker.datatype.number(),
+//     description: faker.commerce.productDescription(),
+//     userNotes: [],
+//   })
+// );
