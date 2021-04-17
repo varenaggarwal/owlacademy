@@ -74,6 +74,28 @@
   margin-left: 0;
 }
 
+.scriblepad-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.scriblepad-container h2 {
+  font-size: 1.2rem;
+}
+.scriblepad-container textarea {
+  width: 100%;
+  border: 0;
+  background: #eef2ff;
+  font-size: 1rem;
+  box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #fff !important;
+}
+
+.scriblepad-container textarea:hover {
+  box-shadow: inset 20px 20px 60px #caced9, inset -20px -20px 60px #ffffff;
+}
+
 .side-menu {
   display: none;
 }

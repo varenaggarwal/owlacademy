@@ -1,4 +1,4 @@
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useData } from "../contexts/data-context";
 import { AddToPlaylist } from "../components/AddToPlaylist";
 import { VideoPlayer } from "../components/VideoPlayer";
@@ -20,11 +20,10 @@ export function VideoTheatre() {
   };
   const currentVideo = getVideoDetails(state.videoData, videoId);
 
-  const changeNote = () => {
-    console.log("Hello in change note", currentVideo.userNotes);
+  const updateNote = (event) => {
     dispatch({
       type: UPDATE_NOTE,
-      payload: { id: currentVideo.id, note: currentVideo.userNotes },
+      payload: { id: currentVideo.id, note: event.target.value },
     });
   };
 
@@ -49,20 +48,23 @@ export function VideoTheatre() {
         >
           <i className="fas fa-list"></i> <span>Add to Playlist</span>
         </button>
-        <h2>ScriplePad</h2>
+      </div>
+      <div className="scriblepad-container">
+        <h2>
+          <span>✏️</span>ScriplePad
+        </h2>
         <textarea
           className="textbox"
           value={currentVideo.userNotes}
           name="content"
           placeholder="Take a note..."
-          onChange={changeNote}
+          onChange={updateNote}
           rows={3}
         ></textarea>
       </div>
       {/* <div className="notes-container">
         <Notes video={currentVideo} />
       </div> */}
-
       <div
         id="myModal"
         className={displayNotes ? "modal display-unset" : "modal"}

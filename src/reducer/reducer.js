@@ -55,14 +55,13 @@ export const reducer = (state, action) => {
       };
 
     case UPDATE_NOTE:
-      console.log("in the update note");
       return {
         ...state,
         videoData: state.videoData.map((videoObject) =>
           videoObject.id === action.payload.id
             ? {
                 ...videoObject,
-                userNotes: "Ipda",
+                userNotes: action.payload.note,
               }
             : videoObject
         ),
