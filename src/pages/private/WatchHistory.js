@@ -8,7 +8,6 @@ export function WatchHistory() {
   return (
     <div className="history-container">
       <h1>Watch History</h1>
-
       {state.watchHistory.map((video) => (
         <VideoBanners video={video} />
       ))}

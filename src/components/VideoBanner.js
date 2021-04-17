@@ -7,13 +7,19 @@ export function VideoBanners({ video }) {
   return (
     <div>
       <div key={video.id} className="card">
-        <Link to={{ pathname: `/watch/${video.id}` }} state={video}>
+        <Link
+          className="video-link"
+          to={{ pathname: `/watch/${video.id}` }}
+          state={video}
+        >
           <img className="img-responsive" src={video.thumbnailImg} />
-          <p>{video.name}</p>
+          <div className="card-text">
+            <p>{video.name}</p>
+          </div>
         </Link>
         <button
           onClick={() => dispatch({ type: TOGGLE_SAVE_VIDEO, payload: video })}
-          className="btn btn-secondary"
+          className="btn btn-secondary btn-thin"
         >
           <i className="fas fa-bookmark"></i>
         </button>
