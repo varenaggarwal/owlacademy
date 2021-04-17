@@ -2,7 +2,11 @@ import { useParams } from "react-router-dom";
 import { useData } from "../contexts/data-context";
 import { AddToPlaylist } from "../components/AddToPlaylist";
 import { VideoPlayer } from "../components/VideoPlayer";
-import { ADD_TO_WATCH_HISTORY, UPDATE_NOTE } from "../reducer/reducer";
+import {
+  ADD_TO_WATCH_HISTORY,
+  UPDATE_NOTE,
+  TOGGLE_SAVE_VIDEO,
+} from "../reducer/reducer";
 import { useEffect, useState } from "react";
 import { Notes } from "../components/Notes";
 
@@ -29,25 +33,35 @@ export function VideoTheatre() {
 
   return (
     <div className="videoTheater-container">
-      <div className="player-container">
-        <VideoPlayer
-          displayProperties={{
-            controls: true,
-            autoPlay: true,
-            srcUrl: currentVideo.srcUrl,
-          }}
-        />
-      </div>
-      <div className="video-info">
-        <h2>{currentVideo.name}</h2>
-        <p>{currentVideo.duration}</p>
-        <div>{currentVideo.description}</div>
-        <button
-          className="btn btn-secondary"
-          onClick={() => setDisplayNotes(true)}
-        >
-          <i className="fas fa-list"></i> <span>Add to Playlist</span>
-        </button>
+      <div>
+        <div className="player-container">
+          <VideoPlayer
+            displayProperties={{
+              controls: true,
+              autoPlay: true,
+              srcUrl: currentVideo.srcUrl,
+            }}
+          />
+        </div>
+        <div className="video-info">
+          <h2>{currentVideo.name}</h2>
+          <p>{currentVideo.duration}</p>
+          <div>{currentVideo.description}</div>
+          <button
+            onClick={() =>
+              dispatch({ type: TOGGLE_SAVE_VIDEO, payload: currentVideo })
+            }
+            className="btn btn-secondary "
+          >
+            <i className="fas fa-bookmark"></i>
+          </button>
+          <button
+            className="btn btn-secondary"
+            onClick={() => setDisplayNotes(true)}
+          >
+            <i className="fas fa-list"></i> <span>Add to Playlist</span>
+          </button>
+        </div>
       </div>
       <div className="scriblepad-container">
         <h2>
